@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import List from "../List";
 import BooksItem from "./BooksItem";
 import {IBook} from "../../types/types";
+import {Container} from "@mui/material";
 
 const BooksPage :FC = () => {
 
@@ -10,12 +11,13 @@ const BooksPage :FC = () => {
             id: 1,
             title: 'Книга 1',
             author: 'Автор 1',
-            category: 'Категория 1'
+            category: 'Категория 1',
+            favorite: true
         }]
     return (
-        <div>
+        <Container>
            <List items={books} renderItem={(book:IBook)=> <BooksItem book={book} key={book.id}/>}/>
-        </div>
+        </Container>
     );
 };
 

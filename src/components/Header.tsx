@@ -4,9 +4,9 @@ import {AppBar, Box, Button, Container, Toolbar, Typography} from "@mui/material
 
 const Header = () => {
     const pages = ['All books', 'Author', 'Category'];
-    const [activePage, setActivePage] = useState<string>('All books');
+    const [activePage, setActivePage] = useState<string>('Author');
     return (
-        <div>
+
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -41,8 +41,8 @@ const Header = () => {
                         <Typography
                             variant="h6"
                             noWrap
-                            component="a"
-                            href="/"
+                            component="div"
+
                             sx={{
                                 display: { xs: 'none', md: 'flex' },
                                 fontFamily: 'Roboto',
@@ -57,7 +57,6 @@ const Header = () => {
                     </Toolbar>
                 </Container>
             </AppBar>
-        </div>
     );
 };
 
