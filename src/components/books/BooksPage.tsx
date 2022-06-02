@@ -9,9 +9,15 @@ const BooksPage :FC = () => {
     const books: IBook[] = [
         {
             id: 1,
-            title: 'Книга 1',
-            author: 'Автор 1',
-            category: 'Категория 1',
+            title: 'Артур Конан Дойл',
+            author: 'Шекспир',
+            category: 'Фантастика',
+            favorite: true
+        }, {
+            id: 1,
+            title: 'Артур Конан Дойл',
+            author: 'Шекспир',
+            category: 'Фантастика',
             favorite: true
         }]
     return (

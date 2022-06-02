@@ -1,0 +1,24 @@
+.mainPage{
+    width: 100%;
+    height: calc(100vh - 84px);
+    background-color: slateblue;
+    padding-top: 20px;
+}
+.leftSide{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.rightSide{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.allCount{
+    font-size: 5rem;
+    color: #fff;
+}

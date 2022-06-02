@@ -15,10 +15,10 @@ const BooksItem: FC<BooksItemProps> = ({book}) => {
 
     return (
         <div className={style.bookItem}>
-            <div>{book.title}</div>
-            <div>{book.author}</div>
-            <div>{book.category}</div>
-            <div onClick={changeFavorite}>{isFavorite ? <FavoriteIcon/> : <FavoriteBorderIcon/>}</div>
+            <div className={style.bookItem__title}>{book.title}</div>
+            <div className={style.bookItem__author}>{book.author}</div>
+            <div className={style.bookItem__category}>{book.category}</div>
+            <div className={style.bookItem__favorite} onClick={changeFavorite}>{isFavorite ? <FavoriteIcon/> : <FavoriteBorderIcon/>}</div>
 
         </div>
     );

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {AppBar, Box, Button, Container, Toolbar, Typography} from "@mui/material";
-
+import {NavLink} from "react-router-dom";
+import style from  "./index.module.css";
 
 const Header = () => {
-    const pages = ['All books', 'Author', 'Category'];
+    const pages = [{name:'All books',link:"/all"}, {name:'Author',link:"/author"}, {name:'Category',link:"/category"}];
     const [activePage, setActivePage] = useState<string>('Author');
     return (
 
@@ -12,30 +13,15 @@ const Header = () => {
                     <Toolbar disableGutters>
                         <Typography
                             variant="h6"
-                            noWrap
-                            component="a"
-                            href="/"
-                            sx={{
-                                mr: 10,
-                                display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'Roboto',
-                                fontWeight: 700,
-                                letterSpacing: '.3rem',
-                                color: 'inherit',
-                                textDecoration: 'none',
-                            }}
-                        >
-                            Online Library
+                            component="div"
+                            sx={{ mr: 10 }}>
+                            <NavLink className={style.links} to={"/"}>
+                                Online Library
+                            </NavLink>
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    onClick={() => {}}
-                                    sx={{ my: 2, color: 'white', display: 'block', fontFamily:"Roboto" }}
-                                >
-                                    {page}
-                                </Button>
+                                <NavLink className={style.links} to={page.link} key={page.name}>{page.name}</NavLink>
                             ))}
                         </Box>
                         <Typography

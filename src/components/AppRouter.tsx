@@ -1,12 +1,14 @@
 import React from 'react';
 import BooksPage from "./books/BooksPage";
 import {Route, Routes} from "react-router-dom";
+import MainPage from "./Main/MainPage";
 
 const AppRouter = () => {
     return (
-        <div style={{marginTop: "20px"}}>
+        <div>
             <Routes>
-                <Route path="/" element={<BooksPage/>}/>
+                <Route path="/" element={<MainPage/>}/>
+                <Route path="/all" element={<BooksPage/>}/>
             </Routes>
 
         </div>
