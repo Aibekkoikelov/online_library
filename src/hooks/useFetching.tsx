@@ -2,7 +2,7 @@ import { useState} from "react";
 import {IBook} from "../types/types";
 
 
-export default function useFetching(callback: (data: IBook) => Promise<any>) {
+export default function useFetching(callback: (data: IBook ) => Promise<any>) {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<any>(null);
 
@@ -17,6 +17,7 @@ export default function useFetching(callback: (data: IBook) => Promise<any>) {
             setIsLoading(false)
         }
     };
+
 
 
     return [fetchData, isLoading, error];

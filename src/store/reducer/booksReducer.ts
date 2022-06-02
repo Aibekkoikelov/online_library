@@ -12,7 +12,7 @@ const initialState: BooksState= {
 export const booksReducer = createReducer(initialState, (builder) => {
      builder
          .addCase(AddBook, (state, action) => {
-          state.books = [...state.books, ...action.payload]
+          state.books = [...action.payload]
     })
          .addCase(SetTabName, (state, action) => {
              state.tabName = action.payload

@@ -8,7 +8,9 @@ export interface IBook{
     category: string;
     favorite: boolean;
 }
-
+export interface IBookItemProps{
+    id: string;
+}
 export  enum BooksActionTypes {
     ADD_BOOK = 'ADD_BOOK',
     SET_TAB_NAME = 'SET_TAB_NAME',
