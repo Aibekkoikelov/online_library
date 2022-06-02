@@ -12,13 +12,15 @@
     justify-content: center;
 }
 .rightSide{
-    display: flex;
+    display: flex!important;
     height: 100%;
-    flex-direction: column;
+    width: 100%;
+    flex-direction: column!important;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 .allCount{
+    width: 100%;
     font-size: 5rem;
     color: #fff;
 }

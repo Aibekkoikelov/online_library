@@ -3,7 +3,12 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import {Button, MenuItem, Select} from "@mui/material";
 import loginValidation from "../../validation/inputValidation";
 import style from './index.module.css';
-const InputForm = () => {
+import {IBook} from "../../types/types";
+import { v4 as uuid} from "uuid";
+interface InputProps  {
+    createNewBook: (book: IBook) => void
+}
+export default function InputForm (props: InputProps)  {
     return (
         <div>
             <h1 className={style.inputTitle}>Add new book</h1>
@@ -12,11 +17,12 @@ const InputForm = () => {
                     title: '',
                     author: '',
                     category: '',
+                    favorite: false
                 }}
                 validationSchema={loginValidation}
                 onSubmit={(values,{ setSubmitting,setFieldValue }) => {
                     setSubmitting(true);
-                    console.log("values", values);
+                      props.createNewBook({id:uuid() , ...values})
                     setTimeout(() => {
                         setFieldValue('title', '');
                         setFieldValue('author', '');
@@ -66,4 +72,3 @@ const InputForm = () => {
     );
 };
 
-export default InputForm;

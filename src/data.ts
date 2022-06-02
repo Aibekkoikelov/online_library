@@ -3,21 +3,21 @@ import {IBook} from "./types/types";
 
 export const allBooks: IBook[] = [
     {
-        id: 1,
+        id: "cscscd",
         title: 'The Design of EveryDay Things',
         author: 'Don Norman',
         category: 'design',
         favorite: false
     },
     {
-        id: 2,
+        id: "cscsed",
         title: 'The Most Human Human',
         author: 'Don Norman',
         category: 'design',
         favorite: false
     },
     {
-        id: 3,
+        id: "cscswed",
         title: 'Unexpected',
         author: 'Don Norman',
         category: 'design',
