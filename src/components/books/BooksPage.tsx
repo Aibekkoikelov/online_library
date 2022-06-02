@@ -1,28 +1,22 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import List from "../List";
 import BooksItem from "./BooksItem";
 import {IBook} from "../../types/types";
 import {Container} from "@mui/material";
+import {useAppDispatch, useAppSelector} from "../../store";
+import {SetTabName} from "../../store/actionCreator/booksCreator";
 
 const BooksPage :FC = () => {
+    const books: IBook[] = useAppSelector(state => state.books.books)
+    const dispatch = useAppDispatch()
 
-    const books: IBook[] = [
-        {
-            id: "fsdf",
-            title: 'Артур Конан Дойл',
-            author: 'Шекспир',
-            category: 'Фантастика',
-            favorite: true
-        }, {
-            id: "fsdfs",
-            title: 'Артур Конан Дойл',
-            author: 'Шекспир',
-            category: 'Фантастика',
-            favorite: true
-        }]
+    useEffect(() => {
+        dispatch(SetTabName("All Books"))
+    },[])
+
     return (
-        <Container>
-           <List items={books} renderItem={(book:IBook)=> <BooksItem book={book} key={book.id}/>}/>
+        <Container >
+           <List  items={books} renderItem={(book:IBook)=> <BooksItem book={book} key={book.id}/>}/>
         </Container>
     );
 };

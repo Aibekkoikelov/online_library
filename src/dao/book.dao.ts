@@ -12,4 +12,8 @@ export default class BookDao{
         const books: IBook[] = await localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books') as string) : [];
         return books.length;
     }
+    static async getAllBooks (){
+        const books: IBook[] = await localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books') as string) : [];
+        return books;
+    }
 }

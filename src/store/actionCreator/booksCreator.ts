@@ -1,5 +1,9 @@
-import {createAction, PrepareAction} from "@reduxjs/toolkit";
+import {createAction} from "@reduxjs/toolkit";
 import {BooksActionTypes, IBook} from "../../types/types";
 
 
-export const AddBook = createAction(BooksActionTypes.ADD_BOOK, (books:IBook) => ({payload: books}));
+export const AddBook = createAction<IBook[]>(BooksActionTypes.ADD_BOOK);
+export const SetTabName = createAction(BooksActionTypes.SET_TAB_NAME, (tabName: string) => ({payload: tabName}));
+
+
+    // , (book: IBook[]) => ({payload: book})

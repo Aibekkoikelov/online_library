@@ -11,4 +11,6 @@ export interface IBook{
 
 export  enum BooksActionTypes {
     ADD_BOOK = 'ADD_BOOK',
+    SET_TAB_NAME = 'SET_TAB_NAME',
 }
+

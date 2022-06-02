@@ -5,13 +5,16 @@ import InputForm from "../../ui/input/InputForm";
 import BookDao from "../../dao/book.dao";
 import useFetching from "../../hooks/useFetching";
 import {IBook} from "../../types/types";
-import {useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../../store";
+import {AddBook, SetTabName} from "../../store/actionCreator/booksCreator";
 
 const MainPage = () => {
-    // const redirect = useNavigate();
+
+    const dispatch = useAppDispatch();
     const [count, setCount] = useState<number>(0);
     const [bookFetching, loading, error] = useFetching(async (data) =>{
-     await BookDao.postBook(data)
+    const response =  await BookDao.postBook(data)
+        dispatch(AddBook(response))
     })
     const [booksCountFetching] = useFetching(async () =>{
      const count =await BookDao.getAllBooksCount()
@@ -19,6 +22,7 @@ const MainPage = () => {
     })
    useEffect(() => {
          booksCountFetching()
+         dispatch(SetTabName('Main'))
    },[])
       function createNewBook(book: IBook) {
           bookFetching(book)

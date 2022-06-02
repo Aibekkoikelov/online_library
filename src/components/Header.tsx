@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 import {AppBar, Box, Button, Container, Toolbar, Typography} from "@mui/material";
 import {NavLink} from "react-router-dom";
 import style from  "./index.module.css";
+import {useAppSelector} from "../store";
 
 const Header = () => {
+    const tabName = useAppSelector(state => state.books.tabName)
     const pages = [{name:'All books',link:"/all"}, {name:'Author',link:"/author"}, {name:'Category',link:"/category"}];
-    const [activePage, setActivePage] = useState<string>('Author');
+    // const [activePage, setActivePage] = useState<string>('Main');
+
     return (
 
             <AppBar position="static">
@@ -38,7 +41,7 @@ const Header = () => {
                                 textDecoration: 'none',
                             }}
                         >
-                            {activePage}
+                            {tabName}
                         </Typography>
                     </Toolbar>
                 </Container>

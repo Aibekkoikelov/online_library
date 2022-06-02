@@ -6,7 +6,7 @@ interface ListProps <T>{
 }
 export  default function List <T> (props: ListProps<T>) {
     return (
-        <div>
+        <div style={{marginTop:"20px"}}>
             {
                 props.items.map(props.renderItem)
             }
