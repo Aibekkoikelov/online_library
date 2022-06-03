@@ -14,7 +14,7 @@ const CategoryItem:FC<CategoryProps> = ({category}) => {
     const state = useAppSelector(state => state.books.books)
     const booksCount = getCountBooksFromCategory( category.name, state)
     function clickHandler() {
-        router(`/author/${category.id}`)
+        router(`/category/${category.id}`)
     }
     return (
         <div onClick={clickHandler} className={style.authorItem}>

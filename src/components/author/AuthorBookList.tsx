@@ -11,8 +11,8 @@ const AuthorBookList = () => {
     const state = useAppSelector(state => state.books.books)
     const author = useAppSelector(state => state.books.author)
     const {authorId} = useParams()
-    const authorName =  author.filter(author => author.id === Number(authorId))[0].name
-    const booksByAuthor = state.filter(book => book.author == authorName)
+    const authorName =  author.filter(author => author.id === Number(authorId))[0]
+    const booksByAuthor = state.filter(book => book.author == authorName.name)
     if (booksByAuthor.length === 0) {
         return <Container>
             <h1 style={{textAlign:"center"}}>No books</h1>

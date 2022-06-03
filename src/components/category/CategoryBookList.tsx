@@ -8,10 +8,10 @@ import BooksItem from "../books/BooksItem";
 
 const CategoryBookList = () => {
     const state = useAppSelector(state => state.books.books)
-    const author = useAppSelector(state => state.books.category)
+    const category = useAppSelector(state => state.books.category)
     const {categoryId} = useParams()
-    const categoryName =  author.filter(author => author.id === Number(categoryId))[0].name
-    const booksByCategory = state.filter(book => book.author == categoryName)
+    const categoryName =  category.filter(category => category.id === Number(categoryId))[0].name
+    const booksByCategory = state.filter(book => book.category == categoryName)
     if (booksByCategory.length === 0) {
         return <Container>
             <h1 style={{textAlign:"center"}}>No books</h1>
