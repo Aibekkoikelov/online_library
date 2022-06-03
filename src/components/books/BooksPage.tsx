@@ -13,7 +13,11 @@ const BooksPage :FC = () => {
     useEffect(() => {
         dispatch(SetTabName("All Books"))
     },[])
-
+   if (books.length === 0) {
+         return <Container>
+              <h1 style={{textAlign:"center"}}>No books</h1>
+         </Container>
+   }
     return (
         <Container >
            <List  items={books} renderItem={(book:IBook)=> <BooksItem book={book} key={book.id}/>}/>

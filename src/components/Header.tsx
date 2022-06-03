@@ -3,12 +3,12 @@ import {AppBar, Box, Button, Container, Toolbar, Typography} from "@mui/material
 import {NavLink} from "react-router-dom";
 import style from  "./index.module.css";
 import {useAppSelector} from "../store";
-
+import Badge from '@mui/material/Badge';
 const Header = () => {
     const tabName = useAppSelector(state => state.books.tabName)
-    const pages = [{name:'All books',link:"/all"}, {name:'Author',link:"/author"}, {name:'Category',link:"/category"}];
-    // const [activePage, setActivePage] = useState<string>('Main');
-
+    const pages = [{name:'All books',link:"/all"}, {name:'Author',link:"/author"},
+        {name:'Category',link:"/category"}]
+    const wishLIstCount = useAppSelector(state => state.books.wishList.length)
     return (
 
             <AppBar position="static">
@@ -26,6 +26,9 @@ const Header = () => {
                             {pages.map((page) => (
                                 <NavLink className={style.links} to={page.link} key={page.name}>{page.name}</NavLink>
                             ))}
+                            <Badge badgeContent={wishLIstCount} color="secondary">
+                                <NavLink  className={style.links} to={"/wishList"}>Wish list</NavLink>
+                            </Badge>
                         </Box>
                         <Typography
                             variant="h6"

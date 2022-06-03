@@ -4,7 +4,7 @@
 export interface IBook{
     id: string;
     title: string;
-    author: IAuthor;
+    author: string;
     category: string;
     favorite: boolean;
 }
@@ -18,5 +18,8 @@ export interface IBookItemProps{
 export  enum BooksActionTypes {
     ADD_BOOK = 'ADD_BOOK',
     SET_TAB_NAME = 'SET_TAB_NAME',
+    ADD_WISH_BOOK = 'ADD_WISH_BOOK',
+    REMOVE_WISH_BOOK = 'REMOVE_WISH_BOOK',
+    TOOGLE_FAVORITE = 'TOOGLE_FAVORITE',
 }
 
