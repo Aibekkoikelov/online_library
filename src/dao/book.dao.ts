@@ -19,6 +19,10 @@ export default class BookDao{
         const books: IBook[] = await localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books') as string) : [];
         return books;
     }
+    static async  getBookById (id: string): Promise<IBook> {
+            const books: IBook[] = await localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books') as string) : [];
+            return books.filter(book => book.id === id)[0];
+    }
     static async deleteBookById (id: string): Promise<IBook[]> {
         const books: IBook[] = await localStorage.getItem('books') ? JSON.parse(localStorage.getItem('books') as string) : [];
         const newBooks = books.filter(book => book.id !== id);

@@ -1,13 +1,14 @@
+
+
 import { useState} from "react";
-import {IBook} from "../types/types";
 
 
-export default function useFetching(callback: (data: IBook) => Promise<void>) {
+export default function useFetchById(callback: (data: string) => Promise<void>) {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<any>(null);
 
 
-    const fetchData = async (data: IBook) => {
+    const fetchData = async (data: string) => {
         try {
             setIsLoading(true);
             await callback(data);

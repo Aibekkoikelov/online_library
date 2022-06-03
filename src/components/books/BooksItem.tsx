@@ -9,10 +9,12 @@ import useFetching from "../../hooks/useFetching";
 import BookDao from "../../dao/book.dao";
 import {AddBook} from "../../store/actionCreator/booksCreator";
 import {useAppDispatch} from "../../store";
+import {useNavigate} from "react-router-dom";
 interface BooksItemProps {
    book: IBook
 }
 const BooksItem: FC<BooksItemProps> = ({book}) => {
+    const router = useNavigate();
     const [isFavorite, setIsFavorite] = React.useState<boolean>(book.favorite)
     const dispatch = useAppDispatch();
     const [deleteBook, loading, error] = useFetching(async (data) =>{
@@ -28,13 +30,14 @@ const BooksItem: FC<BooksItemProps> = ({book}) => {
            deleteBook(book)
     }
     function editBooks(book: IBook) {
-        console.log(book)
+        const id = book.id;
+        router(`/editing/${id}`)
     }
 
     return (
         <div className={style.bookItem}>
             <div className={style.bookItem__title}>{book.title}</div>
-            <div className={style.bookItem__author}>{book.author}</div>
+            <div className={style.bookItem__author}>{book.author.name}</div>
             <div className={style.bookItem__category}>{book.category}</div>
 
             <div className={style.bookItem__actions}>
