@@ -12,6 +12,11 @@ export interface IAuthor{
     id: number;
     name: string;
 }
+export interface ICategory{
+    id: number;
+    name: string;
+}
+
 export interface IBookItemProps{
     id: string;
 }

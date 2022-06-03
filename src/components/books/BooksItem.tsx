@@ -43,6 +43,8 @@ const BooksItem: FC<BooksItemProps> = ({book}) => {
 
     function deleteBooks(book: IBook) {
            deleteBook(book)
+           dispatch(Remove_Book_Wish_List(book.id))
+
     }
     function editBooks(book: IBook) {
         const id = book.id;

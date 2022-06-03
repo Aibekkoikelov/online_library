@@ -1,5 +1,5 @@
 import {createReducer} from "@reduxjs/toolkit";
-import {IAuthor, IBook} from "../../types/types";
+import {IAuthor, IBook, ICategory} from "../../types/types";
 import {
     Add_Book_Wish_List,
     AddBook,
@@ -12,6 +12,7 @@ interface BooksState {
     tabName: string;
     author: IAuthor[]
     wishList: string[];
+    category: ICategory[]
 }
 const initialState: BooksState= {
     books: [],
@@ -22,7 +23,12 @@ const initialState: BooksState= {
         {id: 3, name: "Александр"}
 
     ],
-    wishList: []
+    wishList: [],
+    category: [
+        {id: 1, name: "Фантастика"},
+        {id: 2, name: "Проза"},
+        {id: 3, name: "Детектив"}
+    ]
 }
 export const booksReducer = createReducer(initialState, (builder) => {
      builder

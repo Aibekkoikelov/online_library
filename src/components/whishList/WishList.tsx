@@ -15,6 +15,11 @@ const WishList = () => {
     useEffect(() => {
         dispatch(SetTabName("Wish List"))
     },[])
+    if (allBook.length === 0) {
+        return <Container>
+            <h1 style={{textAlign:"center"}}>No books</h1>
+        </Container>
+    }
     return (
         <Container>
             <List items={allBook} renderItem={(book:IBook)=> <BooksItem book={book} key={book.id}/>}/>

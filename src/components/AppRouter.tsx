@@ -6,6 +6,7 @@ import EditingPage from "./editingPage/EditingPage";
 import AuthorPage from "./author/AuthorPage";
 import AuthorBookList from "./author/AuthorBookList";
 import WishList from "./whishList/WishList";
+import CategoryPage from "./category/CategoryPage";
 
 const AppRouter = () => {
     return (
@@ -17,6 +18,8 @@ const AppRouter = () => {
                 <Route path="/author" element={<AuthorPage/>}/>
                 <Route path="/author/:authorId" element={<AuthorBookList/>}/>
                 <Route path="/wishList" element={<WishList/>}/>
+                <Route path="/category" element={<CategoryPage/>}/>
+                <Route path="/category/:categoryId" element={<AuthorBookList/>}/>
             </Routes>
 
         </div>

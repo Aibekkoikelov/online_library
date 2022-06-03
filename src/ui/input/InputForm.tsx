@@ -12,6 +12,7 @@ interface InputProps  {
 }
 export default function InputForm (props: InputProps)  {
     const author = useAppSelector(state => state.books.author)
+    const category = useAppSelector(state => state.books.category)
     return (
         <div>
             <h1 className={style.inputTitle}>Add new book</h1>
@@ -52,10 +53,12 @@ export default function InputForm (props: InputProps)  {
                         </div>
                         <div className={style.registerForm}>
                             <Field className={style.select} as="select" name="category">
-                                    <option unselectable="on" value="">Chose Category</option>
-                                    <option value="Fantastic">Fantastic</option>
-                                    <option value="Roman">Roman</option>
-                                    <option value="Comedy">Comedy</option>
+                                <option unselectable="on" value="">Chose Category</option>
+                                {category.map(category => (
+                                    <option key={category.id} value={category.name}>{category.name}</option>
+                                ))}
+
+
                             </Field>
                         <ErrorMessage name='category' component="div" className={style.error}   />
                         </div>
