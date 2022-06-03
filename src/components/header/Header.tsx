@@ -9,6 +9,7 @@ const Header = () => {
     const pages = [{name:'All books',link:"/all"}, {name:'Author',link:"/author"},
         {name:'Category',link:"/category"}]
     const wishLIstCount = useAppSelector(state => state.books.wishList.length)
+
     return (
 
             <AppBar position="static">
@@ -24,10 +25,10 @@ const Header = () => {
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
-                                <NavLink className={style.links} to={page.link} key={page.name}>{page.name}</NavLink>
+                                <NavLink  className={({isActive})=>isActive? `${style.active} ${style.links}`: `${style.links}`} to={page.link} key={page.name}>{page.name}</NavLink>
                             ))}
                             <Badge badgeContent={wishLIstCount} color="secondary">
-                                <NavLink  className={style.links} to={"/wishList"}>Wish list</NavLink>
+                                <NavLink className={({isActive})=>isActive? `${style.active} ${style.links}`: `${style.links}`} to={"/wishList"}>Wish list</NavLink>
                             </Badge>
                         </Box>
                         <Typography
