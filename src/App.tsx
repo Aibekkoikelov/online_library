@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import BooksPage from "./components/books/BooksPage";
 import AppRouter from "./components/AppRouter";
 import {BrowserRouter} from "react-router-dom";

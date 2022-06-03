@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Grid} from "@mui/material";
 import style from "./main.module.css";
-import InputForm from "../../ui/input/InputForm";
+import InputForm from "../ui/input/InputForm";
 import BookDao from "../../dao/book.dao";
 import useFetching from "../../hooks/useFetching";
 import {IBook} from "../../types/types";

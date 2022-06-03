@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {Button, MenuItem, Select} from "@mui/material";
-import loginValidation from "../../validation/inputValidation";
+import loginValidation from "../../../validation/inputValidation";
 import style from './index.module.css';
-import {IAuthor, IBook} from "../../types/types";
+import {IAuthor, IBook} from "../../../types/types";
 import { v4 as uuid} from "uuid";
-import {useAppSelector} from "../../store";
+import {useAppSelector} from "../../../store";
 interface InputProps  {
     createNewBook?: (book: IBook) => void
     book?: IBook

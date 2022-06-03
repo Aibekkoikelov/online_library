@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {AppBar, Box, Button, Container, Toolbar, Typography} from "@mui/material";
 import {NavLink} from "react-router-dom";
-import style from  "./index.module.css";
-import {useAppSelector} from "../store";
+import style from "../index.module.css";
+import {useAppSelector} from "../../store";
 import Badge from '@mui/material/Badge';
 const Header = () => {
     const tabName = useAppSelector(state => state.books.tabName)
